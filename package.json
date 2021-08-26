@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "send:request": "python http/tests.py",
+    "dev:api": "uvicorn packages.api.main:app --port 5517",
+    "dev:mail": "export FLASK_APP=packages.mail.main:app && flask run --port=5518"
+  }
+}
