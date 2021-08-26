@@ -1,25 +1,9 @@
-from fastapi import FastAPI, BackgroundTasks
-from packages.api.types import User
-from packages.api.tasks.send_email import send_email_request
+from fastapi import FastAPI
+from packages.api.config import configure_app
+from packages.api.routes.auth import router as auth_router
 
 app = FastAPI()
 
+app.include_router(auth_router, prefix="/auth")
 
-@app.post('/register')
-async def register(user: User, background_tasks: BackgroundTasks):
-    """Endpoint to register a user in the API
-
-    Args:
-        user (User): User data in the request body
-        background_tasks (BackgroundTasks): Background tasks queue to schedule a new task
-    """
-
-    # 'Registers' a user
-    print(f'[REGISTRATION]: {user}')
-
-    # Schedules the background task
-    background_tasks.add_task(lambda: send_email_request(user.email))
-
-    return {
-        'message': 'Successfully registered',
-    }
+configure_app(app)
