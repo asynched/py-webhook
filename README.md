@@ -15,13 +15,7 @@ When a user registers, a background task (sending the e-mail) is scheduled to ru
 
 **Obs:** Flowchart made with Mermaid, to visualize is use a markdown editor such as [StackEdit](https://stackedit.io).
 
-```mermaid
-graph
-
-Client -- User registration --> API
-API -- Registered user --> MailService
-MailService -- Registration confirmation e-mail --> Client
-```
+![Application flow](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGhcblxuQ2xpZW50IC0tIFVzZXIgcmVnaXN0cmF0aW9uIC0tPiBBUElcbkFQSSAtLSBSZWdpc3RlcmVkIHVzZXIgLS0-IE1haWxTZXJ2aWNlXG5NYWlsU2VydmljZSAtLSBSZWdpc3RyYXRpb24gY29uZmlybWF0aW9uIGUtbWFpbCAtLT4gQ2xpZW50IiwibWVybWFpZCI6IntcbiAgXCJ0aGVtZVwiOiBcImRlZmF1bHRcIlxufSIsInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0)
 
 ### Installation
 
